@@ -3,6 +3,7 @@ import PillarCards from '@/components/home/PillarCards'
 import StatsBar from '@/components/home/StatsBar'
 import ServicesGrid from '@/components/home/ServicesGrid'
 import FeaturedCourse from '@/components/home/FeaturedCourse'
+import GallerySection from '@/components/home/GallerySection'
 import Testimonials from '@/components/home/Testimonials'
 import CorporateSection from '@/components/home/CorporateSection'
 import CtaBanner from '@/components/home/CtaBanner'
@@ -14,6 +15,7 @@ export default function HomePage() {
       <PillarCards />
       <StatsBar />
       <ServicesGrid />
+      <GallerySection />
       <FeaturedCourse />
       <Testimonials />
       <CorporateSection />
