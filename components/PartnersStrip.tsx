@@ -41,43 +41,48 @@ export default function PartnersStrip() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
-  const label = lang === 'nl' ? 'Onze werkgeverspartners' : lang === 'ar' ? 'شركاء أصحاب العمل' : 'Trusted employer partners'
+  const label = lang === 'nl' ? 'Werken met' : lang === 'ar' ? 'نعمل مع' : 'Working with'
 
   return (
-    <section className="bg-white border-y border-gray-border py-14">
+    <section className="bg-sand py-16">
       <div className="container-rwa">
-        <motion.p
+        <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 10 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center text-xs font-bold uppercase tracking-widest text-muted mb-10"
         >
-          {label}
-        </motion.p>
+          <div className="flex items-center gap-4 mb-10">
+            <h2 className="font-extrabold text-ink" style={{ fontSize: 'clamp(22px, 2.5vw, 28px)' }}>
+              {label}
+            </h2>
+            <div className="flex-1 h-px bg-gray-border" />
+          </div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-6 items-center justify-items-center">
-          {PARTNERS.map(({ name, logo }, i) => (
-            <motion.div
-              key={name}
-              initial={{ opacity: 0, y: 8 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="group flex items-center justify-center w-full"
-              title={name}
-            >
-              <div className="relative w-full h-14">
-                <Image
-                  src={logo}
-                  alt={name}
-                  fill
-                  className="object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
-                  unoptimized
-                />
-              </div>
-            </motion.div>
-          ))}
-        </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {PARTNERS.map(({ name, logo }, i) => (
+              <motion.div
+                key={name}
+                initial={{ opacity: 0, y: 8 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: i * 0.07 }}
+                className="bg-white rounded-2xl border border-gray-border flex items-center justify-center p-6 hover:shadow-md transition-shadow duration-300"
+                style={{ minHeight: 100 }}
+                title={name}
+              >
+                <div className="relative w-full h-12">
+                  <Image
+                    src={logo}
+                    alt={name}
+                    fill
+                    className="object-contain"
+                    unoptimized
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   )
