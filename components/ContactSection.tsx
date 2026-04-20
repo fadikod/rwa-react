@@ -42,9 +42,9 @@ export default function ContactSection() {
           className="flex flex-col gap-4"
         >
           {/* Top row: form + Meet Ruby card */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Form card */}
-            <div className="md:col-span-2 bg-white border border-gray-border rounded-2xl p-8">
+            <div className="bg-white border border-gray-border rounded-2xl p-8">
               {sent ? (
                 <p className="text-accent font-semibold py-4">{tx.sent}</p>
               ) : (
