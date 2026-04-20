@@ -53,24 +53,23 @@ export default function PartnersStrip() {
           transition={{ duration: 0.5 }}
         >
           <div className="flex items-center gap-4 mb-10">
-            <h2 className="font-extrabold text-ink" style={{ fontSize: 'clamp(22px, 2.5vw, 28px)' }}>
-              {label}
-            </h2>
+            <div className="flex-1 h-px bg-gray-border" />
+            <p className="text-xs font-bold uppercase tracking-widest text-muted whitespace-nowrap">{label}</p>
             <div className="flex-1 h-px bg-gray-border" />
           </div>
 
-          <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+          <div className="flex flex-wrap justify-center gap-4">
             {PARTNERS.map(({ name, logo }, i) => (
               <motion.div
                 key={name}
                 initial={{ opacity: 0, y: 8 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="bg-white rounded-xl border border-gray-border flex items-center justify-center p-4 hover:shadow-md transition-shadow duration-300"
-                style={{ minHeight: 72 }}
+                className="bg-white rounded-2xl border border-gray-border flex items-center justify-center p-6 hover:shadow-md transition-shadow duration-300"
+                style={{ width: 180, height: 110 }}
                 title={name}
               >
-                <div className="relative w-full h-9">
+                <div className="relative w-full h-12">
                   <Image
                     src={logo}
                     alt={name}
