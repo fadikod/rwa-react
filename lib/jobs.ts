@@ -22,8 +22,8 @@ export const JOBS: Job[] = [
       nl: 'Orders verzamelen en inpakken in een moderne magazijnomgeving. Geen ervaring vereist.',
     },
     chips: {
-      en: ['No Dutch required', 'Training provided'],
-      nl: ['Geen Nederlands vereist', 'Training aangeboden'],
+      en: ['No Dutch required', 'Shifts'],
+      nl: ['Geen Nederlands vereist', 'Diensten'],
     },
   },
   {
@@ -37,8 +37,8 @@ export const JOBS: Job[] = [
       nl: 'Collega\'s en klanten helpen met hardware- en softwareproblemen. Basiskennis IT vereist.',
     },
     chips: {
-      en: ['Entry level', 'English OK'],
-      nl: ['Instapniveau', 'Engels volstaat'],
+      en: ['Windows', 'Ticketing'],
+      nl: ['Windows', 'Ticketing'],
     },
   },
   {
@@ -52,8 +52,8 @@ export const JOBS: Job[] = [
       nl: 'Ondersteuning van het keukenteam bij voorbereidend werk, schoonmaak en basiskooktaken.',
     },
     chips: {
-      en: ['Evening shifts available', 'Team environment'],
-      nl: ['Avonddiensten beschikbaar', 'Teamomgeving'],
+      en: ['Flexible hours', 'Entry level'],
+      nl: ['Flexibele uren', 'Instapniveau'],
     },
   },
   {
@@ -67,8 +67,8 @@ export const JOBS: Job[] = [
       nl: 'Kantoor- en faciliteitenschoonmaak in centraal Utrecht. Vroege ochtend- of avonddiensten.',
     },
     chips: {
-      en: ['No experience needed', 'Steady hours'],
-      nl: ['Geen ervaring nodig', 'Vaste uren'],
+      en: ['Shifts', 'Entry level'],
+      nl: ['Diensten', 'Instapniveau'],
     },
   },
   {
@@ -82,8 +82,8 @@ export const JOBS: Job[] = [
       nl: 'Pakketten bezorgen aan klanten in Eindhoven en omgeving. Geldig rijbewijs vereist.',
     },
     chips: {
-      en: ["Driver's license B", 'Company van'],
-      nl: ['Rijbewijs B', 'Bedrijfsbus'],
+      en: ['Driving license', 'Full-time'],
+      nl: ['Rijbewijs', 'Voltijd'],
     },
   },
   {
@@ -97,8 +97,8 @@ export const JOBS: Job[] = [
       nl: 'Klanten helpen in de winkel en via telefoon. Goede communicatieve vaardigheden vereist.',
     },
     chips: {
-      en: ['Dutch A2+', 'Customer facing'],
-      nl: ['Nederlands A2+', 'Klantgericht'],
+      en: ['Retail', 'Customer service'],
+      nl: ['Retail', 'Klantenservice'],
     },
   },
   {
@@ -112,8 +112,8 @@ export const JOBS: Job[] = [
       nl: 'Koffiedranken bereiden en klanten bedienen in een gezellig café. Training wordt aangeboden.',
     },
     chips: {
-      en: ['Training included', 'Friendly team'],
-      nl: ['Training inbegrepen', 'Gezellig team'],
+      en: ['Hospitality', 'Entry level'],
+      nl: ['Horeca', 'Instapniveau'],
     },
   },
   {
@@ -127,8 +127,8 @@ export const JOBS: Job[] = [
       nl: 'Uitgaande zendingen efficiënt inpakken en labelen in een dynamische omgeving.',
     },
     chips: {
-      en: ['Physical work', 'Day shifts'],
-      nl: ['Fysiek werk', 'Dagdiensten'],
+      en: ['Logistics', 'No Dutch required'],
+      nl: ['Logistiek', 'Geen Nederlands vereist'],
     },
   },
   {
@@ -302,18 +302,23 @@ export function getJob(slug: string): Job | undefined {
   return JOBS.find((j) => j.slug === slug)
 }
 
+type JobLang = 'en' | 'nl'
+function jobLang(lang: Lang): JobLang {
+  return lang === 'nl' ? 'nl' : 'en'
+}
+
 export function jobTitle(job: Job, lang: Lang): string {
-  return job.title[lang]
+  return job.title[jobLang(lang)]
 }
 
 export function jobSchedule(job: Job, lang: Lang): string {
-  return job.schedule[lang]
+  return job.schedule[jobLang(lang)]
 }
 
 export function jobDescription(job: Job, lang: Lang): string {
-  return job.description[lang]
+  return job.description[jobLang(lang)]
 }
 
 export function jobChips(job: Job, lang: Lang): string[] {
-  return job.chips[lang]
+  return job.chips[jobLang(lang)]
 }

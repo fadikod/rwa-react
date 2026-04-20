@@ -1,4 +1,4 @@
-export type Lang = 'en' | 'nl'
+export type Lang = 'en' | 'nl' | 'ar'
 
 export const dict = {
   en: {
@@ -11,6 +11,7 @@ export const dict = {
     lang: {
       en: 'English',
       nl: 'Nederlands',
+      ar: 'العربية',
     },
     hero: {
       headline: 'Building opportunities for refugees in the Netherlands',
@@ -45,11 +46,18 @@ export const dict = {
     story: {
       label: 'Success Story',
       quote:
-        'I had 15 years of experience as a barber but no idea how to start over in a new country. RWA helped me get certified, find a shop, and build a client base. Now I run my own chair in Amsterdam.',
-      name: 'Hassan',
-      role: 'Self-employed Barber · Amsterdam',
+        'Sparkle in Style gave me the chance to grow my skills and build a real career in the Netherlands. RWA connected me with the right people at the right time.',
+      name: 'Mahdi',
+      role: 'Stylist · Sparkle in Style, Den Haag',
       cta1: 'See open roles',
       cta2: 'Partner with us',
+      about: 'Sparkle in Style — a creative salon and learning company in Den Haag inspiring confidence through craftsmanship.',
+    },
+    about: {
+      label: 'Meet Our Founder',
+      name: 'Ruby Pracht',
+      role: 'Owner, Refugee Work Agency',
+      bio: 'Ruby Pracht is the owner of RWA. With over 20 years of experience in reintegration and temporary employment, she helps newcomers find their way toward internships, training, and employment. She believes in tailored solutions, practical guidance, and swift placement.',
     },
     contact: {
       title: 'Contact us',
@@ -61,7 +69,7 @@ export const dict = {
       emailPlaceholder: 'Email',
       messagePlaceholder: 'Tell us what you need',
       send: 'Send message',
-      sent: 'Thanks! We\'ll be in touch soon.',
+      sent: "Thanks! We'll be in touch soon.",
       orgName: 'Refugee Work Agency',
       orgDesc: 'Onderdeel SIS Groep',
       emailLabel: 'Address',
@@ -108,6 +116,7 @@ export const dict = {
     lang: {
       en: 'English',
       nl: 'Nederlands',
+      ar: 'العربية',
     },
     hero: {
       headline: 'Kansen bouwen voor vluchtelingen in Nederland',
@@ -120,7 +129,7 @@ export const dict = {
       },
       training: {
         title: 'Training',
-        desc: 'Vaardigheidsontwikkeling en beroepsgerichte trainingsprogramma\'s aanbieden.',
+        desc: "Vaardigheidsontwikkeling en beroepsgerichte trainingsprogramma's aanbieden.",
       },
       partnerships: {
         title: 'Werkgeverspartnerships',
@@ -142,11 +151,18 @@ export const dict = {
     story: {
       label: 'Succesverhaal',
       quote:
-        'Ik had 15 jaar ervaring als kapper, maar wist niet hoe ik opnieuw moest beginnen in een nieuw land. RWA hielp me certificeren, een zaak te vinden en klanten op te bouwen. Nu heb ik mijn eigen stoel in Amsterdam.',
-      name: 'Hassan',
-      role: 'Zelfstandig kapper · Amsterdam',
+        'Sparkle in Style gaf mij de kans om mijn vaardigheden te ontwikkelen en een echte carrière op te bouwen in Nederland. RWA verbond mij met de juiste mensen op het juiste moment.',
+      name: 'Mahdi',
+      role: 'Stylist · Sparkle in Style, Den Haag',
       cta1: 'Bekijk vacatures',
       cta2: 'Word partner',
+      about: 'Sparkle in Style — een creatieve salon en leerbedrijf in Den Haag dat vertrouwen inspireert door vakmanschap.',
+    },
+    about: {
+      label: 'Ontmoet onze oprichter',
+      name: 'Ruby Pracht',
+      role: 'Eigenaar, Refugee Work Agency',
+      bio: 'Ruby Pracht is de eigenaar van RWA. Met meer dan 20 jaar ervaring in re-integratie en uitzendwerk helpt zij nieuwkomers de weg te vinden naar stages, trainingen en werk. Zij gelooft in maatwerk, praktische begeleiding en snelle plaatsing.',
     },
     contact: {
       title: 'Neem contact op',
@@ -193,6 +209,111 @@ export const dict = {
       cvSelected: 'Geselecteerd:',
       aboutRole: 'Over de functie',
       requirements: 'Vereisten',
+    },
+  },
+  ar: {
+    nav: {
+      about: 'من نحن',
+      jobs: 'وظائف',
+      contact: 'تواصل',
+      back: '→ العودة إلى الوظائف',
+    },
+    lang: {
+      en: 'English',
+      nl: 'Nederlands',
+      ar: 'العربية',
+    },
+    hero: {
+      headline: 'نبني فرصاً للاجئين في هولندا',
+      sub: 'نربط المواهب المتحفزة بأصحاب العمل الذين يقدّرون المهارات والتنوع والإدماج.',
+    },
+    features: {
+      jobMatching: {
+        title: 'مطابقة الوظائف',
+        desc: 'ربط اللاجئين بفرص عمل مناسبة.',
+      },
+      training: {
+        title: 'التدريب',
+        desc: 'توفير برامج تطوير المهارات والتدريب المهني.',
+      },
+      partnerships: {
+        title: 'شراكات أصحاب العمل',
+        desc: 'التعاون مع الشركات لإنشاء مسارات عمل شاملة.',
+      },
+      support: {
+        title: 'الدعم والإرشاد',
+        desc: 'تقديم التوجيه والمساعدة لمساعدة اللاجئين على النجاح في العمل.',
+      },
+    },
+    jobs: {
+      title: 'الوظائف المتاحة',
+      viewAll: 'عرض الكل',
+      applyBtn: 'تقدّم',
+      fullTime: 'دوام كامل',
+      partTime: 'دوام جزئي',
+      flexible: 'مرن',
+    },
+    story: {
+      label: 'قصة نجاح',
+      quote:
+        'أتاحت لي Sparkle in Style فرصة تطوير مهاراتي وبناء مسيرة مهنية حقيقية في هولندا. وصلني RWA بالأشخاص المناسبين في الوقت المناسب.',
+      name: 'مهدي',
+      role: 'مصفف شعر · Sparkle in Style، لاهاي',
+      cta1: 'استعرض الوظائف',
+      cta2: 'كن شريكاً',
+      about: 'Sparkle in Style — صالون إبداعي وشركة تعليمية في لاهاي تُلهم الثقة من خلال الحرفية.',
+    },
+    about: {
+      label: 'تعرّف على مؤسستنا',
+      name: 'روبي براخت',
+      role: 'مالكة وكالة العمل للاجئين',
+      bio: 'روبي براخت هي مالكة RWA. بخبرة تزيد عن 20 عاماً في إعادة الاندماج والتوظيف المؤقت، تساعد القادمين الجدد على إيجاد طريقهم نحو التدريب الداخلي والتأهيل والتوظيف. تؤمن بالحلول المخصصة والتوجيه العملي والتوظيف السريع.',
+    },
+    contact: {
+      title: 'تواصل معنا',
+      sub: 'أخبرنا بما تبحث عنه. سنرد بسرعة.',
+      roleLabel: 'أنا مرشح',
+      roleCandidate: 'أنا مرشح',
+      roleEmployer: 'أنا صاحب عمل',
+      namePlaceholder: 'اسمك',
+      emailPlaceholder: 'البريد الإلكتروني',
+      messagePlaceholder: 'أخبرنا بما تحتاجه',
+      send: 'إرسال الرسالة',
+      sent: 'شكراً! سنتواصل معك قريباً.',
+      orgName: 'وكالة العمل للاجئين',
+      orgDesc: 'جزء من مجموعة SIS',
+      emailLabel: 'العنوان',
+      phoneLabel: 'الهاتف',
+      emailValue: 'Zuidlarenstraat 57/2.16, 2545 VP Den Haag',
+      phoneValue: '06 15371014',
+      note: '',
+    },
+    footer: {
+      demo: 'تجريبي',
+      rights: '© {year} وكالة العمل للاجئين.',
+      about: 'من نحن',
+      jobs: 'وظائف',
+      contact: 'تواصل',
+    },
+    apply: {
+      title: 'تقدّم لوظيفة',
+      firstName: 'الاسم الأول',
+      lastName: 'اسم العائلة',
+      email: 'البريد الإلكتروني',
+      phone: 'الهاتف',
+      availability: 'متى يمكنك البدء؟',
+      availOptions: ['اختر…', 'فوراً', 'خلال أسبوعين', 'خلال شهر', 'خلال 3 أشهر'],
+      motivation: 'دوافعك باختصار',
+      motivationPlaceholder: 'أخبرنا لماذا أنت مناسب لهذا الدور…',
+      consent: 'أوافق على استخدام بياناتي لمعالجة هذا الطلب.',
+      submit: 'إرسال الطلب',
+      success: 'شكراً! تم استلام طلبك.',
+      applyingFor: 'تتقدم لوظيفة',
+      cvLabel: 'ارفع سيرتك الذاتية',
+      cvHint: 'PDF أو Word — بحد أقصى 5 ميغابايت',
+      cvSelected: 'تم الاختيار:',
+      aboutRole: 'عن الوظيفة',
+      requirements: 'المتطلبات',
     },
   },
 } as const

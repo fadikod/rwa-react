@@ -7,7 +7,7 @@ import { motion, useInView } from 'framer-motion'
 import { useLang } from '@/context/LanguageContext'
 import { dict } from '@/lib/i18n'
 
-const STORY_IMG = '/success-barber.jpg'
+const STORY_IMG = 'https://rwa-demo-fadi.netlify.app/assets/success-story-mahdi2.png'
 
 export default function SuccessStory() {
   const { lang } = useLang()
@@ -30,9 +30,9 @@ export default function SuccessStory() {
           <div className="relative min-h-[480px] md:min-h-0">
             <Image
               src={STORY_IMG}
-              alt="Hassan's success story"
+              alt="Mahdi's success story at Sparkle in Style"
               fill
-              className="object-cover object-[40%_20%]"
+              className="object-cover object-center"
               unoptimized
             />
           </div>
@@ -42,6 +42,10 @@ export default function SuccessStory() {
             <span className="text-xs font-bold uppercase tracking-widest text-accent mb-4">
               {tx.label}
             </span>
+
+            <p className="text-sm text-muted mb-5 leading-relaxed italic">
+              {tx.about}
+            </p>
 
             <div className="relative mb-6">
               <span

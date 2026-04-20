@@ -152,14 +152,14 @@ export default function Header() {
 
               {/* Language options */}
               <div className="py-2">
-                {(['en', 'nl'] as const).map((l) => (
+                {(['en', 'nl', 'ar'] as const).map((l) => (
                   <button
                     key={l}
                     onClick={() => { setLang(l); setMenuOpen(false) }}
                     className={`w-full text-left px-4 py-2.5 text-sm font-semibold transition-colors flex items-center gap-2
                       ${lang === l ? 'text-accent' : 'text-ink hover:bg-sand'}`}
                   >
-                    <span>{l === 'en' ? '🇬🇧' : '🇳🇱'}</span>
+                    <span>{l === 'en' ? '🇬🇧' : l === 'nl' ? '🇳🇱' : '🇸🇾'}</span>
                     {tx.lang[l]}
                     {lang === l && <span className="ml-auto text-xs">✓</span>}
                   </button>

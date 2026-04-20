@@ -18,18 +18,25 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const stored = localStorage.getItem('rwa-lang') as Lang | null
-    if (stored === 'en' || stored === 'nl') {
+    if (stored === 'en' || stored === 'nl' || stored === 'ar') {
       setLangState(stored)
+      applyLang(stored)
       return
     }
     const browser = navigator.language.toLowerCase()
     if (browser.startsWith('nl')) setLangState('nl')
+    else if (browser.startsWith('ar')) setLangState('ar')
   }, [])
+
+  const applyLang = (l: Lang) => {
+    document.documentElement.lang = l
+    document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr'
+  }
 
   const setLang = (l: Lang) => {
     setLangState(l)
     localStorage.setItem('rwa-lang', l)
-    document.documentElement.lang = l
+    applyLang(l)
   }
 
   return (

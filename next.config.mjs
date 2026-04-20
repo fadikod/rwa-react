@@ -7,6 +7,7 @@ const nextConfig = {
       { protocol: 'https', hostname: 'raw.githubusercontent.com' },
       { protocol: 'https', hostname: 'logo.clearbit.com' },
       { protocol: 'https', hostname: 'upload.wikimedia.org' },
+      { protocol: 'https', hostname: 'rwa-demo-fadi.netlify.app' },
     ],
   },
 }

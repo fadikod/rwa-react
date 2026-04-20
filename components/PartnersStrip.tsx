@@ -7,10 +7,6 @@ import { useLang } from '@/context/LanguageContext'
 
 const PARTNERS = [
   {
-    name: 'Royal BAM Group',
-    logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Royal_BAM_Group.svg/250px-Royal_BAM_Group.svg.png',
-  },
-  {
     name: 'AkzoNobel',
     logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/df/AkzoNobel_Logo.svg/250px-AkzoNobel_Logo.svg.png',
   },
@@ -30,6 +26,14 @@ const PARTNERS = [
     name: 'Van der Valk',
     logo: 'https://upload.wikimedia.org/wikipedia/en/d/d1/Van_der_Valk_%28logo%29.png',
   },
+  {
+    name: 'Sparkle in Style',
+    logo: 'https://rwa-demo-fadi.netlify.app/assets/SIS_logo.jpg',
+  },
+  {
+    name: 'DDF',
+    logo: 'https://rwa-demo-fadi.netlify.app/assets/DDF.png',
+  },
 ]
 
 export default function PartnersStrip() {
@@ -37,7 +41,7 @@ export default function PartnersStrip() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
-  const label = lang === 'nl' ? 'Onze werkgeverspartners' : 'Trusted employer partners'
+  const label = lang === 'nl' ? 'Onze werkgeverspartners' : lang === 'ar' ? 'شركاء أصحاب العمل' : 'Trusted employer partners'
 
   return (
     <section className="bg-white border-y border-gray-border py-14">
