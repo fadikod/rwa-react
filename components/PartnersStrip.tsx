@@ -56,17 +56,17 @@ export default function PartnersStrip() {
           {label}
         </motion.p>
 
-        <div className="flex flex-wrap items-center justify-center gap-10 md:gap-14">
+        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-6 items-center justify-items-center">
           {PARTNERS.map(({ name, logo }, i) => (
             <motion.div
               key={name}
               initial={{ opacity: 0, y: 8 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="group flex items-center justify-center"
+              className="group flex items-center justify-center w-full"
               title={name}
             >
-              <div className="relative w-32 h-12">
+              <div className="relative w-full h-14">
                 <Image
                   src={logo}
                   alt={name}
