@@ -97,9 +97,11 @@ export default function ContactSection() {
             </div>
 
             {/* Meet Ruby card */}
-            <div className="bg-white border border-gray-border rounded-2xl p-6 flex flex-col justify-center gap-4">
-              <div className="flex items-start gap-4">
-                <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-gray-border flex-shrink-0">
+            <div className="bg-white rounded-2xl p-6 flex flex-col justify-center gap-5"
+              style={{ border: '1.5px solid #d4a96a' }}>
+              <div className="flex items-center gap-5">
+                <div className="relative flex-shrink-0 rounded-full overflow-hidden"
+                  style={{ width: 96, height: 96, border: '2.5px solid #d4a96a' }}>
                   <Image
                     src={RUBY_IMG}
                     alt="Ruby Pracht"
