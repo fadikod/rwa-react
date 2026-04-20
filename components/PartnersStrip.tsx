@@ -66,14 +66,15 @@ export default function PartnersStrip() {
               className="group flex items-center justify-center"
               title={name}
             >
-              <Image
-                src={logo}
-                alt={name}
-                width={140}
-                height={48}
-                className="h-10 w-auto object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
-                unoptimized
-              />
+              <div className="relative w-32 h-12">
+                <Image
+                  src={logo}
+                  alt={name}
+                  fill
+                  className="object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                  unoptimized
+                />
+              </div>
             </motion.div>
           ))}
         </div>
