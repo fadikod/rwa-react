@@ -1,33 +1,44 @@
 'use client'
 
-import React, { createContext, useContext, useState } from 'react'
-
-export type Language = 'nl' | 'en'
+import { createContext, useContext, useEffect, useState } from 'react'
+import type { Lang } from '@/lib/i18n'
 
 interface LanguageContextType {
-  language: Language
-  setLanguage: (lang: Language) => void
-  t: (obj: { nl: string; en: string }) => string
+  lang: Lang
+  setLang: (lang: Lang) => void
 }
 
 const LanguageContext = createContext<LanguageContextType>({
-  language: 'nl',
-  setLanguage: () => {},
-  t: (obj) => obj.nl,
+  lang: 'en',
+  setLang: () => {},
 })
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>('nl')
+  const [lang, setLangState] = useState<Lang>('en')
 
-  const t = (obj: { nl: string; en: string }) => obj[language]
+  useEffect(() => {
+    const stored = localStorage.getItem('rwa-lang') as Lang | null
+    if (stored === 'en' || stored === 'nl') {
+      setLangState(stored)
+      return
+    }
+    const browser = navigator.language.toLowerCase()
+    if (browser.startsWith('nl')) setLangState('nl')
+  }, [])
+
+  const setLang = (l: Lang) => {
+    setLangState(l)
+    localStorage.setItem('rwa-lang', l)
+    document.documentElement.lang = l
+  }
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ lang, setLang }}>
       {children}
     </LanguageContext.Provider>
   )
 }
 
-export function useLanguage() {
+export function useLang() {
   return useContext(LanguageContext)
 }

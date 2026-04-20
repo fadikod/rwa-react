@@ -2,19 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
-
 :root {
-  --cream: #faf7f2;
-  --beige: #f0ebe3;
-  --terracotta: #c17b4e;
-  --terracotta-dark: #a6633a;
-  --taupe: #8b6f5e;
-  --sage: #8a9e8c;
-  --dark: #2c2117;
-  --body-text: #3a2e27;
-  --light-text: #7a6a5e;
-  --border: #ddd5cb;
+  --ink: #0f172a;
+  --muted: #526074;
+  --sand: #fff7ed;
+  --accent: #b46c3e;
+  --accent-dark: #8f5530;
+  --gray-border: #e2e8f0;
+  --gray-bg: #f1f5f9;
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(2, 8, 23, 0.08);
 }
 
 html {
@@ -22,81 +19,78 @@ html {
 }
 
 body {
-  background-color: var(--cream);
-  color: var(--body-text);
-  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--sand);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu,
+    'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-@layer base {
-  h1, h2, h3, h4 {
-    font-family: 'Playfair Display', Georgia, serif;
-    color: var(--dark);
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
-
-  h5, h6 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    color: var(--dark);
+  html {
+    scroll-behavior: auto;
   }
 }
 
 @layer components {
-  .btn-primary {
-    @apply inline-flex items-center gap-2 bg-terracotta hover:bg-terracotta-dark text-white font-inter font-medium px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 text-sm tracking-wide;
+  .btn {
+    @apply inline-flex items-center gap-2 px-4 py-3 rounded-xl border border-gray-border bg-white font-bold cursor-pointer transition-all duration-200 text-sm text-ink;
   }
 
-  .btn-outline {
-    @apply inline-flex items-center gap-2 border border-dark text-dark hover:bg-dark hover:text-cream font-inter font-medium px-6 py-3 rounded-full transition-all duration-300 text-sm tracking-wide;
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-accent border-0 text-white font-bold cursor-pointer transition-all duration-200 text-sm;
+    filter: brightness(1);
+  }
+
+  .btn-primary:hover {
+    filter: brightness(0.95);
   }
 
   .btn-outline-white {
-    @apply inline-flex items-center gap-2 border border-white text-white hover:bg-white hover:text-dark font-inter font-medium px-6 py-3 rounded-full transition-all duration-300 text-sm tracking-wide;
+    @apply inline-flex items-center gap-2 px-4 py-3 rounded-xl border border-white text-white font-bold cursor-pointer transition-all duration-200 text-sm bg-transparent;
   }
 
-  .section-padding {
-    @apply py-20 px-6 md:px-12 lg:px-20;
+  .btn-outline-white:hover {
+    @apply bg-white text-ink;
   }
 
-  .container-max {
-    @apply max-w-7xl mx-auto;
+  .chip {
+    @apply inline-block border border-gray-border bg-white text-muted text-xs px-2 py-1 rounded-full;
   }
 
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  .input {
+    @apply w-full border border-gray-border rounded-xl px-3.5 py-3 text-sm text-ink bg-white outline-none transition-all duration-200;
   }
 
-  .tag-badge {
-    @apply inline-block text-xs font-inter font-medium tracking-widest uppercase px-3 py-1 rounded-full;
+  .input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(180, 108, 62, 0.18);
   }
-}
 
-/* Smooth page transitions */
-.page-enter {
-  opacity: 0;
-  transform: translateY(12px);
-}
-
-.page-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 400ms, transform 400ms;
+  .container-rwa {
+    width: max(92%, min(92vw, 1200px));
+    margin: 0 auto;
+  }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
-
 ::-webkit-scrollbar-track {
-  background: var(--cream);
+  background: var(--sand);
 }
-
 ::-webkit-scrollbar-thumb {
-  background: var(--taupe);
+  background: var(--muted);
   border-radius: 3px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--terracotta);
+  background: var(--accent);
 }

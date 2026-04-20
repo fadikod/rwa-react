@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { LanguageProvider } from '@/context/LanguageContext'
-import Navbar from '@/components/layout/Navbar'
-import Footer from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
-  title: '[Studio Name] — Beauty & Styling',
-  description: 'Premium styling advies & professionele opleidingen. Kledingstijladvies, kleuranalyse, zakelijk kledingadvies en beauty-opleidingen.',
-  keywords: 'styling advies, kleuranalyse, beauty opleiding, kledingstijladvies, in-company training, imagostylist',
+  title: 'Refugee Work Agency',
+  description:
+    'We connect motivated refugee talent with employers who value skills, diversity and inclusion.',
+  icons: {
+    icon: 'https://raw.githubusercontent.com/fadikod/rwa/main/assets/favicon.svg',
+  },
 }
 
 export default function RootLayout({
@@ -16,13 +17,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="nl">
-      <body className="bg-cream">
-        <LanguageProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </LanguageProvider>
+    <html lang="en">
+      <body>
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   )

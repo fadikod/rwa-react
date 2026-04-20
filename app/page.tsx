@@ -1,25 +1,23 @@
-import HeroSection from '@/components/home/HeroSection'
-import PillarCards from '@/components/home/PillarCards'
-import StatsBar from '@/components/home/StatsBar'
-import ServicesGrid from '@/components/home/ServicesGrid'
-import FeaturedCourse from '@/components/home/FeaturedCourse'
-import GallerySection from '@/components/home/GallerySection'
-import Testimonials from '@/components/home/Testimonials'
-import CorporateSection from '@/components/home/CorporateSection'
-import CtaBanner from '@/components/home/CtaBanner'
+import Header from '@/components/Header'
+import HeroSection from '@/components/HeroSection'
+import JobsSection from '@/components/JobsSection'
+import SuccessStory from '@/components/SuccessStory'
+import ContactSection from '@/components/ContactSection'
+import PartnersStrip from '@/components/PartnersStrip'
+import Footer from '@/components/Footer'
 
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
-      <PillarCards />
-      <StatsBar />
-      <ServicesGrid />
-      <GallerySection />
-      <FeaturedCourse />
-      <Testimonials />
-      <CorporateSection />
-      <CtaBanner />
+      <Header />
+      <main>
+        <HeroSection />
+        <JobsSection />
+        <SuccessStory />
+        <PartnersStrip />
+        <ContactSection />
+      </main>
+      <Footer />
     </>
   )
 }

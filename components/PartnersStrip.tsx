@@ -1,0 +1,79 @@
+'use client'
+
+import { useRef } from 'react'
+import Image from 'next/image'
+import { motion, useInView } from 'framer-motion'
+import { useLang } from '@/context/LanguageContext'
+
+const PARTNERS = [
+  {
+    name: 'Royal BAM Group',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Royal_BAM_Group.svg/250px-Royal_BAM_Group.svg.png',
+  },
+  {
+    name: 'AkzoNobel',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/df/AkzoNobel_Logo.svg/250px-AkzoNobel_Logo.svg.png',
+  },
+  {
+    name: 'Cargill',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Cargill_logo.svg/250px-Cargill_logo.svg.png',
+  },
+  {
+    name: 'Gemeente Amsterdam',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Logo_gemeente_Amsterdam.png',
+  },
+  {
+    name: 'Gemeente Rotterdam',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Gemeente_Rotterdam.svg',
+  },
+  {
+    name: 'Van der Valk',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/d/d1/Van_der_Valk_%28logo%29.png',
+  },
+]
+
+export default function PartnersStrip() {
+  const { lang } = useLang()
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, margin: '-60px' })
+
+  const label = lang === 'nl' ? 'Onze werkgeverspartners' : 'Trusted employer partners'
+
+  return (
+    <section className="bg-white border-y border-gray-border py-14">
+      <div className="container-rwa">
+        <motion.p
+          ref={ref}
+          initial={{ opacity: 0, y: 10 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-center text-xs font-bold uppercase tracking-widest text-muted mb-10"
+        >
+          {label}
+        </motion.p>
+
+        <div className="flex flex-wrap items-center justify-center gap-10 md:gap-14">
+          {PARTNERS.map(({ name, logo }, i) => (
+            <motion.div
+              key={name}
+              initial={{ opacity: 0, y: 8 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="group flex items-center justify-center"
+              title={name}
+            >
+              <Image
+                src={logo}
+                alt={name}
+                width={140}
+                height={48}
+                className="h-10 w-auto object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                unoptimized
+              />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
