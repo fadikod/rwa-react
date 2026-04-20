@@ -105,9 +105,11 @@ export default function ContactSection() {
               <p>{tx.phoneLabel}: <span className="text-ink font-medium">{tx.phoneValue}</span></p>
             </div>
 
-            <p className="text-xs text-muted italic border-t border-gray-border pt-4">
-              {tx.note}
-            </p>
+            {tx.note && (
+              <p className="text-xs text-muted italic border-t border-gray-border pt-4">
+                {tx.note}
+              </p>
+            )}
           </div>
         </motion.div>
       </div>
