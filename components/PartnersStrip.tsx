@@ -9,30 +9,37 @@ const PARTNERS = [
   {
     name: 'AkzoNobel',
     logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/df/AkzoNobel_Logo.svg/250px-AkzoNobel_Logo.svg.png',
+    scale: 0.8,
   },
   {
     name: 'Cargill',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Cargill_logo.svg/250px-Cargill_logo.svg.png',
+    scale: 0.85,
   },
   {
     name: 'Gemeente Amsterdam',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Logo_gemeente_Amsterdam.png',
+    scale: 0.9,
   },
   {
     name: 'Gemeente Rotterdam',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Gemeente_Rotterdam.svg',
+    scale: 0.95,
   },
   {
     name: 'Van der Valk',
     logo: 'https://upload.wikimedia.org/wikipedia/en/d/d1/Van_der_Valk_%28logo%29.png',
+    scale: 0.85,
   },
   {
     name: 'Sparkle in Style',
     logo: 'https://rwa-demo-fadi.netlify.app/assets/SIS_logo.jpg',
+    scale: 1.3,
   },
   {
     name: 'DDF',
     logo: 'https://rwa-demo-fadi.netlify.app/assets/DDF.png',
+    scale: 1.4,
   },
 ]
 
@@ -59,17 +66,17 @@ export default function PartnersStrip() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-4">
-            {PARTNERS.map(({ name, logo }, i) => (
+            {PARTNERS.map(({ name, logo, scale }, i) => (
               <motion.div
                 key={name}
                 initial={{ opacity: 0, y: 8 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="bg-white rounded-2xl border border-gray-border flex flex-col items-center justify-center gap-3 p-5 hover:shadow-md transition-shadow duration-300"
-                style={{ width: 180, height: 130 }}
+                className="bg-white rounded-2xl border border-gray-border flex items-center justify-center p-5 hover:shadow-md transition-shadow duration-300"
+                style={{ width: 180, height: 110 }}
                 title={name}
               >
-                <div className="relative w-full h-10">
+                <div className="relative w-full h-12" style={{ transform: `scale(${scale})` }}>
                   <Image
                     src={logo}
                     alt={name}
@@ -78,7 +85,6 @@ export default function PartnersStrip() {
                     unoptimized
                   />
                 </div>
-                <p className="text-xs font-semibold text-muted text-center leading-tight">{name}</p>
               </motion.div>
             ))}
           </div>
