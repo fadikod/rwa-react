@@ -33,12 +33,12 @@ const PARTNERS = [
   },
   {
     name: 'Sparkle in Style',
-    logo: '/sis-logo.jpg',
+    logo: '/SIS.png',
     scale: 1.3,
   },
   {
     name: 'DDF',
-    logo: '/ddf-logo.png',
+    logo: '/Logo DDF Donne.png',
     scale: 1.4,
   },
 ]
