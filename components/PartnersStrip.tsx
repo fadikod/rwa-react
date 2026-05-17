@@ -65,15 +65,15 @@ export default function PartnersStrip() {
             <div className="flex-1 h-px bg-gray-border" />
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-3">
             {PARTNERS.map(({ name, logo, scale }, i) => (
               <motion.div
                 key={name}
                 initial={{ opacity: 0, y: 8 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="bg-white rounded-2xl border border-gray-border flex items-center justify-center p-5 hover:shadow-md transition-shadow duration-300"
-                style={{ width: 180, height: 110 }}
+                className="bg-white rounded-2xl border border-gray-border flex items-center justify-center p-3 hover:shadow-md transition-shadow duration-300"
+                style={{ height: 80 }}
                 title={name}
               >
                 <div className="relative w-full h-12" style={{ transform: `scale(${scale})` }}>

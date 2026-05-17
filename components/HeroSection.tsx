@@ -87,20 +87,20 @@ export default function HeroSection() {
 
       {/* Feature cards — pinned to bottom of hero, still inside the image */}
       <div className="relative z-10 container-rwa pb-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
           {features.map(({ key, icon }, i) => (
             <motion.div
               key={key}
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 + i * 0.1, ease: 'easeOut' }}
-              className="bg-white rounded-2xl p-7 flex flex-col shadow-sm hover:shadow-md transition-shadow min-h-[360px]"
+              className="bg-white rounded-2xl p-4 lg:p-7 flex flex-col shadow-sm hover:shadow-md transition-shadow min-h-[160px] lg:min-h-[320px]"
             >
-              <div className="mb-6">{icon}</div>
-              <h3 className="font-bold text-ink text-[17px] leading-snug mb-4">
+              <div className="mb-3 lg:mb-6">{icon}</div>
+              <h3 className="font-bold text-ink text-[14px] lg:text-[17px] leading-snug mb-2 lg:mb-4">
                 {tx.features[key].title}
               </h3>
-              <p className="text-muted text-[15px] leading-relaxed">
+              <p className="text-muted text-[12px] lg:text-[15px] leading-relaxed hidden sm:block">
                 {tx.features[key].desc}
               </p>
             </motion.div>

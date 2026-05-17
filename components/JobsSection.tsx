@@ -32,7 +32,7 @@ export default function JobsSection() {
         {/* Jobs grid */}
         <div
           ref={ref}
-          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4"
+          className="grid grid-cols-2 xl:grid-cols-4 gap-3"
         >
           {JOBS.slice(0, 8).map((job, i) => (
             <motion.article
