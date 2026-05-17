@@ -43,13 +43,14 @@ export default function ApplyForm() {
     try {
       const data = new FormData()
       data.append('_form_type', 'job-application')
-      data.append('job', slug)
-      data.append('firstName', form.firstName)
-      data.append('lastName', form.lastName)
+      data.append('first', form.firstName)
+      data.append('last', form.lastName)
       data.append('email', form.email)
       data.append('phone', form.phone)
       data.append('availability', form.availability)
       data.append('motivation', form.motivation)
+      data.append('job_title', job ? jobTitle(job, lang) : slug)
+      data.append('job_city', job?.city ?? '')
       if (cvFile) data.append('cv', cvFile)
 
       await fetch('https://formbold.com/s/9gBMM', {
