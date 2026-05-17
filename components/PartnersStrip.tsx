@@ -65,11 +65,11 @@ export default function PartnersStrip() {
                 initial={{ opacity: 0, y: 8 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="bg-white rounded-2xl border border-gray-border flex items-center justify-center p-6 hover:shadow-md transition-shadow duration-300"
-                style={{ width: 180, height: 110 }}
+                className="bg-white rounded-2xl border border-gray-border flex flex-col items-center justify-center gap-3 p-5 hover:shadow-md transition-shadow duration-300"
+                style={{ width: 180, height: 130 }}
                 title={name}
               >
-                <div className="relative w-full h-12">
+                <div className="relative w-full h-10">
                   <Image
                     src={logo}
                     alt={name}
@@ -78,6 +78,7 @@ export default function PartnersStrip() {
                     unoptimized
                   />
                 </div>
+                <p className="text-xs font-semibold text-muted text-center leading-tight">{name}</p>
               </motion.div>
             ))}
           </div>
