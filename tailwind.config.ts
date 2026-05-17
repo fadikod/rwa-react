@@ -8,9 +8,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: '#0f172a',
-        muted: '#526074',
-        sand: '#fff7ed',
+        ink: '#1e293b',
+        muted: '#64748b',
+        sand: '#f8fafc',
         accent: '#b46c3e',
         'accent-dark': '#8f5530',
         'gray-border': '#e2e8f0',

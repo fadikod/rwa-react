@@ -52,7 +52,7 @@ export default function HeroSection() {
         className="object-cover"
         unoptimized
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink/75 via-ink/55 to-ink/15" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/55 via-ink/35 to-ink/5" />
 
       {/* Hero text — upper portion */}
       <div className="relative z-10 container-rwa flex-1 flex items-center pt-36 pb-12">

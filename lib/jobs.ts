@@ -27,21 +27,6 @@ export const JOBS: Job[] = [
     },
   },
   {
-    slug: 'junior-it-support-den-haag',
-    title: { en: 'Junior IT Support', nl: 'Junior IT-support' },
-    city: 'Den Haag',
-    schedule: { en: 'Part-time', nl: 'Deeltijd' },
-    company: 'TechHelp BV',
-    description: {
-      en: 'Help colleagues and clients with hardware and software issues. Basic IT knowledge needed.',
-      nl: 'Collega\'s en klanten helpen met hardware- en softwareproblemen. Basiskennis IT vereist.',
-    },
-    chips: {
-      en: ['Windows', 'Ticketing'],
-      nl: ['Windows', 'Ticketing'],
-    },
-  },
-  {
     slug: 'kitchen-assistant-amsterdam',
     title: { en: 'Kitchen Assistant', nl: 'Keukenassistent' },
     city: 'Amsterdam',
@@ -84,36 +69,6 @@ export const JOBS: Job[] = [
     chips: {
       en: ['Driving license', 'Full-time'],
       nl: ['Rijbewijs', 'Voltijd'],
-    },
-  },
-  {
-    slug: 'customer-service-leiden',
-    title: { en: 'Customer Service Assistant', nl: 'Klantenservicemedewerker' },
-    city: 'Leiden',
-    schedule: { en: 'Full-time', nl: 'Voltijd' },
-    company: 'ShopMart',
-    description: {
-      en: 'Assist customers in-store and via phone. Good communication skills required.',
-      nl: 'Klanten helpen in de winkel en via telefoon. Goede communicatieve vaardigheden vereist.',
-    },
-    chips: {
-      en: ['Retail', 'Customer service'],
-      nl: ['Retail', 'Klantenservice'],
-    },
-  },
-  {
-    slug: 'barista-haarlem',
-    title: { en: 'Barista', nl: 'Barista' },
-    city: 'Haarlem',
-    schedule: { en: 'Part-time', nl: 'Deeltijd' },
-    company: 'CoffeeSpot',
-    description: {
-      en: 'Prepare coffee drinks and serve customers in a cosy café. Training provided.',
-      nl: 'Koffiedranken bereiden en klanten bedienen in een gezellig café. Training wordt aangeboden.',
-    },
-    chips: {
-      en: ['Hospitality', 'Entry level'],
-      nl: ['Horeca', 'Instapniveau'],
     },
   },
   {

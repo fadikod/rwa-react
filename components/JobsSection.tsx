@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
 import { useLang } from '@/context/LanguageContext'
 import { dict } from '@/lib/i18n'
-import { JOBS, jobTitle, jobSchedule, jobDescription, jobChips } from '@/lib/jobs'
+import { JOBS, jobTitle, jobSchedule, jobChips } from '@/lib/jobs'
 
 export default function JobsSection() {
   const { lang } = useLang()
@@ -53,10 +53,6 @@ export default function JobsSection() {
                 <span>·</span>
                 <span>{job.company}</span>
               </div>
-
-              <p className="text-muted text-sm leading-relaxed flex-1">
-                {jobDescription(job, lang)}
-              </p>
 
               <div className="flex flex-wrap gap-1.5">
                 {jobChips(job, lang).map((chip) => (

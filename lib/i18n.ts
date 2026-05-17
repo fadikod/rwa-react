@@ -19,8 +19,8 @@ export const dict = {
     },
     features: {
       jobMatching: {
-        title: 'Job Matching',
-        desc: 'Connecting refugees with suitable employment opportunities.',
+        title: 'Jobeducation',
+        desc: 'Kandidaten opleiden naar een werk met een baangarantie.',
       },
       training: {
         title: 'Training',
@@ -124,8 +124,8 @@ export const dict = {
     },
     features: {
       jobMatching: {
-        title: 'Vacaturematching',
-        desc: 'Vluchtelingen verbinden met passende werkmogelijkheden.',
+        title: 'Jobeducation',
+        desc: 'Kandidaten opleiden naar een werk met een baangarantie.',
       },
       training: {
         title: 'Training',
