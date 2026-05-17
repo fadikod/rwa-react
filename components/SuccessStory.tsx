@@ -7,7 +7,7 @@ import { motion, useInView } from 'framer-motion'
 import { useLang } from '@/context/LanguageContext'
 import { dict } from '@/lib/i18n'
 
-const STORY_IMG = '/success-mahdi.png'
+const STORY_IMG = '/Mahdi1.jpg'
 
 const EXTRA_STORIES = [
   {
