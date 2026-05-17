@@ -7,7 +7,7 @@ import { motion, useInView } from 'framer-motion'
 import { useLang } from '@/context/LanguageContext'
 import { dict } from '@/lib/i18n'
 
-const STORY_IMG = 'https://rwa-demo-fadi.netlify.app/assets/success-story-mahdi2.png'
+const STORY_IMG = '/success-story-mahdi.png'
 
 const EXTRA_STORIES = [
   {

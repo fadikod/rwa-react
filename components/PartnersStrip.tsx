@@ -33,12 +33,12 @@ const PARTNERS = [
   },
   {
     name: 'Sparkle in Style',
-    logo: 'https://rwa-demo-fadi.netlify.app/assets/SIS_logo.jpg',
+    logo: '/sis-logo.jpg',
     scale: 1.3,
   },
   {
     name: 'DDF',
-    logo: 'https://rwa-demo-fadi.netlify.app/assets/DDF.png',
+    logo: '/ddf-logo.png',
     scale: 1.4,
   },
 ]
