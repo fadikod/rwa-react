@@ -87,9 +87,9 @@ export default function Header() {
           <Image
             src={LOGO}
             alt="RWA logo"
-            width={56}
-            height={56}
-            className="w-14 h-14 object-contain flex-shrink-0"
+            width={68}
+            height={68}
+            className="w-[68px] h-[68px] object-contain flex-shrink-0"
             unoptimized
           />
           <span className={`font-bold text-base leading-tight ${isApplyPage ? 'text-ink' : 'text-white'}`}>
@@ -102,9 +102,9 @@ export default function Header() {
           <Image
             src={LOGO}
             alt="RWA logo"
-            width={40}
-            height={40}
-            className="h-8 w-auto"
+            width={56}
+            height={56}
+            className="h-14 w-auto"
             unoptimized
           />
         </Link>
