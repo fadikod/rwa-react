@@ -35,10 +35,10 @@ export default function ContactSection() {
           initial={{ opacity: 0, y: 14 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="flex flex-col gap-4"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4"
         >
-          {/* Form card — full width */}
-          <div className="bg-white border border-gray-border rounded-2xl p-8">
+          {/* Form — 2/3 */}
+          <div className="md:col-span-2 bg-white border border-gray-border rounded-2xl p-8">
             {sent ? (
               <p className="text-accent font-semibold py-4">{tx.sent}</p>
             ) : (
@@ -90,18 +90,30 @@ export default function ContactSection() {
             )}
           </div>
 
-          {/* Address bar */}
-          <div className="bg-white border border-gray-border rounded-2xl px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
-            style={{ borderLeft: '4px solid var(--accent, #b46c3e)' }}
-          >
-            <p className="text-sm">
-              <span className="font-semibold text-accent">{tx.emailLabel}:</span>{' '}
-              <span className="text-ink">{tx.emailValue}</span>
-            </p>
-            <p className="text-sm">
-              <span className="font-semibold text-accent">{tx.phoneLabel}:</span>{' '}
-              <span className="text-ink">{tx.phoneValue}</span>
-            </p>
+          {/* Info card — 1/3 */}
+          <div className="bg-white border border-gray-border rounded-2xl p-7 flex flex-col gap-6 justify-center"
+            style={{ borderLeft: '4px solid var(--accent, #b46c3e)' }}>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-accent mb-3">
+                {tx.orgName}
+              </p>
+              <p className="text-sm text-muted">{tx.orgDesc}</p>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <div>
+                <p className="text-xs font-semibold text-muted uppercase tracking-wide mb-1">{tx.emailLabel}</p>
+                <p className="text-sm text-ink font-medium">{tx.emailValue}</p>
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-muted uppercase tracking-wide mb-1">{tx.phoneLabel}</p>
+                <p className="text-sm text-ink font-medium">
+                  <a href={`tel:${tx.phoneValue.replace(/\s/g, '')}`} className="hover:text-accent transition-colors">
+                    {tx.phoneValue}
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
