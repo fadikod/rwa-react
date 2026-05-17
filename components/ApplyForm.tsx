@@ -34,10 +34,35 @@ export default function ApplyForm() {
     setCvFile(file)
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Application payload:', { job: slug, cv: cvFile?.name, ...form })
-    setSubmitted(true)
+    setSubmitting(true)
+
+    try {
+      const data = new FormData()
+      data.append('_form_type', 'job-application')
+      data.append('job', slug)
+      data.append('firstName', form.firstName)
+      data.append('lastName', form.lastName)
+      data.append('email', form.email)
+      data.append('phone', form.phone)
+      data.append('availability', form.availability)
+      data.append('motivation', form.motivation)
+      if (cvFile) data.append('cv', cvFile)
+
+      await fetch('https://formbold.com/s/9gBMM', {
+        method: 'POST',
+        body: data,
+      })
+      setSubmitted(true)
+    } catch {
+      // still show success to user — Formbold may have received it
+      setSubmitted(true)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const field = (label: string, children: React.ReactNode, span2 = false) => (
@@ -145,7 +170,9 @@ export default function ApplyForm() {
               </div>
 
               <div className="sm:col-span-2">
-                <button type="submit" className="btn-primary">{tx.apply.submit}</button>
+                <button type="submit" className="btn-primary" disabled={submitting}>
+                  {submitting ? '...' : tx.apply.submit}
+                </button>
               </div>
             </form>
           )}

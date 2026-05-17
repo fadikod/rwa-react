@@ -12,11 +12,30 @@ export default function ContactSection() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
   const [form, setForm] = useState({ role: '', name: '', email: '', message: '' })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSent(true)
+    setSending(true)
+    try {
+      const data = new FormData()
+      data.append('_form_type', 'contact')
+      data.append('role', form.role)
+      data.append('name', form.name)
+      data.append('email', form.email)
+      data.append('message', form.message)
+
+      await fetch('https://formbold.com/s/9gBMM', {
+        method: 'POST',
+        body: data,
+      })
+      setSent(true)
+    } catch {
+      setSent(true)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -82,8 +101,8 @@ export default function ContactSection() {
                 />
 
                 <div className="sm:col-span-2">
-                  <button type="submit" className="btn-primary">
-                    {tx.send}
+                  <button type="submit" className="btn-primary" disabled={sending}>
+                    {sending ? '...' : tx.send}
                   </button>
                 </div>
               </form>
