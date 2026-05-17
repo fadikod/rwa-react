@@ -73,10 +73,10 @@ export default function PartnersStrip() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
                 className="bg-white rounded-2xl border border-gray-border flex items-center justify-center p-3 hover:shadow-md transition-shadow duration-300"
-                style={{ height: 80 }}
+                style={{ height: 100 }}
                 title={name}
               >
-                <div className="relative w-full h-12" style={{ transform: `scale(${scale})` }}>
+                <div className="relative w-full h-16" style={{ transform: `scale(${scale})` }}>
                   <Image
                     src={logo}
                     alt={name}
