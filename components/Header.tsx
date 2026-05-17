@@ -81,15 +81,15 @@ export default function Header() {
         {/* Brand badge */}
         <Link
           href="/"
-          className="hidden sm:flex items-center gap-3 px-5 py-3 rounded-full backdrop-blur-md bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-colors"
+          className="hidden sm:flex items-center gap-3 px-4 py-2 rounded-full backdrop-blur-md bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-colors"
           style={isApplyPage ? { background: 'transparent', border: 'none', backdropFilter: 'none' } : {}}
         >
           <Image
             src={LOGO}
             alt="RWA logo"
-            width={80}
-            height={80}
-            className="h-16 w-auto object-contain"
+            width={56}
+            height={56}
+            className="w-14 h-14 object-contain flex-shrink-0"
             unoptimized
           />
           <span className={`font-bold text-base leading-tight ${isApplyPage ? 'text-ink' : 'text-white'}`}>
