@@ -27,7 +27,7 @@ export default function SuccessStory() {
           style={{ boxShadow: '0 10px 30px rgba(2,8,23,.08)' }}
         >
           {/* Image side */}
-          <div className="relative min-h-[480px] md:min-h-0">
+          <div className="relative w-full aspect-[4/3] md:aspect-auto md:min-h-[500px]">
             <Image
               src={STORY_IMG}
               alt="Mahdi's success story at Sparkle in Style"
