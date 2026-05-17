@@ -95,13 +95,13 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 + i * 0.1, ease: 'easeOut' }}
-              className="bg-white rounded-2xl p-5 lg:p-7 flex flex-col shadow-sm hover:shadow-md transition-shadow snap-start flex-shrink-0 w-[72vw] sm:w-[42vw] lg:w-auto lg:min-h-[320px]"
+              className="bg-white rounded-2xl p-5 lg:p-6 flex flex-col shadow-sm hover:shadow-md transition-shadow snap-start flex-shrink-0 w-[72vw] sm:w-[42vw] lg:w-auto"
             >
-              <div className="mb-4 lg:mb-6">{icon}</div>
-              <h3 className="font-bold text-ink text-[15px] lg:text-[17px] leading-snug mb-2 lg:mb-4">
+              <div className="mb-3">{icon}</div>
+              <h3 className="font-bold text-ink text-[15px] lg:text-[16px] leading-snug mb-2">
                 {tx.features[key].title}
               </h3>
-              <p className="text-muted text-[13px] lg:text-[15px] leading-relaxed">
+              <p className="text-muted text-[13px] leading-relaxed">
                 {tx.features[key].desc}
               </p>
             </motion.div>

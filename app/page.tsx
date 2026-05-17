@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import HeroSection from '@/components/HeroSection'
+import TrustStrip from '@/components/TrustStrip'
 import JobsSection from '@/components/JobsSection'
 import SuccessStory from '@/components/SuccessStory'
 import PartnersStrip from '@/components/PartnersStrip'
@@ -12,6 +13,7 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroSection />
+        <TrustStrip />
         <JobsSection />
         <SuccessStory />
         <PartnersStrip />
