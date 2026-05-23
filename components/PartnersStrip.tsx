@@ -37,11 +37,11 @@ export default function PartnersStrip() {
             <div
               key={i}
               className="flex-shrink-0 flex items-center justify-center bg-white border border-gray-border rounded-2xl px-6 transition-all duration-300 group"
-              style={{ height: 80, minWidth: 140 }}
+              style={{ height: 96, minWidth: 160 }}
               title={name}
             >
               <div
-                className="relative w-24 h-10 transition-all duration-300"
+                className="relative w-36 h-16 transition-all duration-300"
                 style={{ filter: 'grayscale(1) opacity(0.6)' }}
                 onMouseEnter={e => (e.currentTarget.style.filter = 'grayscale(0) opacity(1)')}
                 onMouseLeave={e => (e.currentTarget.style.filter = 'grayscale(1) opacity(0.6)')}
