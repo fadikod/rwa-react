@@ -80,7 +80,7 @@ export default function PartnersStrip() {
             <div className="flex-1 h-px bg-gray-border" />
           </div>
 
-          <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-10 gap-3">
+          <div className="grid grid-cols-3 sm:grid-cols-5 gap-3">
             {PARTNERS.map(({ name, logo, scale }, i) => (
               <motion.div
                 key={name}
