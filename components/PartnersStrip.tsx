@@ -41,6 +41,21 @@ const PARTNERS = [
     logo: '/Logo DDF Donne.png',
     scale: 1.4,
   },
+  {
+    name: 'Detaconcept',
+    logo: '/detaconcept-logo.svg',
+    scale: 1.0,
+  },
+  {
+    name: 'Prestatie Uitzendbureau',
+    logo: '/prestatie-logo.png',
+    scale: 1.1,
+  },
+  {
+    name: 'RockForce Jobs',
+    logo: '/rockforce-logo.jpg',
+    scale: 1.2,
+  },
 ]
 
 export default function PartnersStrip() {
@@ -65,7 +80,7 @@ export default function PartnersStrip() {
             <div className="flex-1 h-px bg-gray-border" />
           </div>
 
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+          <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-10 gap-3">
             {PARTNERS.map(({ name, logo, scale }, i) => (
               <motion.div
                 key={name}
