@@ -4,16 +4,16 @@ import Image from 'next/image'
 import { useLang } from '@/context/LanguageContext'
 
 const PARTNERS = [
-  { name: 'AkzoNobel',            logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/df/AkzoNobel_Logo.svg/250px-AkzoNobel_Logo.svg.png' },
-  { name: 'Cargill',              logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Cargill_logo.svg/250px-Cargill_logo.svg.png' },
-  { name: 'Gemeente Amsterdam',   logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Logo_gemeente_Amsterdam.png' },
-  { name: 'Gemeente Rotterdam',   logo: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Gemeente_Rotterdam.svg' },
-  { name: 'Van der Valk',         logo: 'https://upload.wikimedia.org/wikipedia/en/d/d1/Van_der_Valk_%28logo%29.png' },
-  { name: 'Sparkle in Style',     logo: '/SIS.png' },
-  { name: 'DDF',                  logo: '/Logo DDF Donne.png' },
-  { name: 'Detaconcept',          logo: '/detaconcept-logo.svg' },
-  { name: 'Prestatie',            logo: '/prestatie-logo.png' },
-  { name: 'RockForce Jobs',       logo: '/rockforce-logo.jpg' },
+  { name: 'AkzoNobel',            logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/df/AkzoNobel_Logo.svg/250px-AkzoNobel_Logo.svg.png', scale: 0.85 },
+  { name: 'Cargill',              logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Cargill_logo.svg/250px-Cargill_logo.svg.png', scale: 0.9 },
+  { name: 'Gemeente Amsterdam',   logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Logo_gemeente_Amsterdam.png', scale: 0.9 },
+  { name: 'Gemeente Rotterdam',   logo: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Gemeente_Rotterdam.svg', scale: 0.95 },
+  { name: 'Van der Valk',         logo: 'https://upload.wikimedia.org/wikipedia/en/d/d1/Van_der_Valk_%28logo%29.png', scale: 0.9 },
+  { name: 'Sparkle in Style',     logo: '/SIS.png', scale: 1.5 },
+  { name: 'DDF',                  logo: '/Logo DDF Donne.png', scale: 1.5 },
+  { name: 'Detaconcept',          logo: '/detaconcept-logo.svg', scale: 1.1 },
+  { name: 'Prestatie',            logo: '/prestatie-logo.png', scale: 1.2 },
+  { name: 'RockForce Jobs',       logo: '/rockforce-logo.jpg', scale: 1.1 },
 ]
 
 export default function PartnersStrip() {
@@ -33,7 +33,7 @@ export default function PartnersStrip() {
       {/* Marquee track */}
       <div className="relative flex">
         <div className="flex animate-marquee gap-8 pr-8">
-          {[...PARTNERS, ...PARTNERS].map(({ name, logo }, i) => (
+          {[...PARTNERS, ...PARTNERS].map(({ name, logo, scale }, i) => (
             <div
               key={i}
               className="flex-shrink-0 flex items-center justify-center bg-white border border-gray-border rounded-2xl px-6 transition-all duration-300 group"
@@ -42,9 +42,9 @@ export default function PartnersStrip() {
             >
               <div
                 className="relative w-36 h-16 transition-all duration-300"
-                style={{ filter: 'grayscale(1) opacity(0.6)' }}
-                onMouseEnter={e => (e.currentTarget.style.filter = 'grayscale(0) opacity(1)')}
-                onMouseLeave={e => (e.currentTarget.style.filter = 'grayscale(1) opacity(0.6)')}
+                style={{ filter: 'grayscale(1) opacity(0.6)', transform: `scale(${scale})` }}
+                onMouseEnter={e => { e.currentTarget.style.filter = 'grayscale(0) opacity(1)'; e.currentTarget.style.transform = `scale(${scale})` }}
+                onMouseLeave={e => { e.currentTarget.style.filter = 'grayscale(1) opacity(0.6)'; e.currentTarget.style.transform = `scale(${scale})` }}
               >
                 <Image src={logo} alt={name} fill className="object-contain" unoptimized />
               </div>
